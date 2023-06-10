@@ -108,7 +108,7 @@ class DevelopersController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:developers,email',
+            'email' => 'required|email',
             'role' => 'required'
         ]);
         if ($validator->fails()) {
