@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams,  } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { createProject, readProject, updateProject } from '../redux/actions/projectActions';
+import { createProject, readProject, updateProject } from '../../redux/actions/projectActions';
 
 const ProjectForm = ({ currentProject, createProject, updateProject, readProject }) => {
     const [title, setTitle] = useState(currentProject ? currentProject.title : '');
@@ -27,12 +27,17 @@ const ProjectForm = ({ currentProject, createProject, updateProject, readProject
         e.preventDefault();
         const project = { title, description };
         if (currentProject) {
+            
             updateProject(currentProject.id, project);
-        } else {
-            createProject(project);
-        }
 
-        // history.push('/projects'); // Redirect to a new page
+            alert('Project successfully updated!');
+
+        } else {
+
+            createProject(project);
+
+            alert('Project successfully updated!');
+        }
 
         setTitle('');
         setDescription('');

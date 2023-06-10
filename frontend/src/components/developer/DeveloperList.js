@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {Link} from 'react-router-dom';
 
 
-import { readDevelopers, deleteDeveloper } from '../redux/actions/developerActions';
+import { readDevelopers, deleteDeveloper } from '../../redux/actions/developerActions';
 
 const DeveloperList = ({ developers, readDevelopers, deleteDeveloper }) => {
     useEffect(() => {
@@ -13,6 +13,9 @@ const DeveloperList = ({ developers, readDevelopers, deleteDeveloper }) => {
     const onDeleteClick = id => {
         
         deleteDeveloper(id);
+
+        alert("Developer is deleted succesfully");
+        
     };
 
     return (
@@ -20,7 +23,7 @@ const DeveloperList = ({ developers, readDevelopers, deleteDeveloper }) => {
             <h1>Developers</h1>
             
 
-            <Link to="/developers/new" className="btn btn-primary mt-5 mb-5">New</Link>
+            <Link to="/developers/new" className="btn btn-primary mt-5 mb-5" >New</Link>
 
           
             <table className="table table-striped">

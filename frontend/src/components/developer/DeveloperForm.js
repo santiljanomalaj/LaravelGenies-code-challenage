@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { createDeveloper, updateDeveloper, readDeveloper } from '../redux/actions/developerActions';
+import { createDeveloper, updateDeveloper, readDeveloper } from '../../redux/actions/developerActions';
+
 
 const DeveloperForm = ({ isEdit, currentDeveloper, readDeveloper, createDeveloper, updateDeveloper }) => {
     const [name, setName] = useState(currentDeveloper ? currentDeveloper.name : '');
@@ -25,16 +26,23 @@ const DeveloperForm = ({ isEdit, currentDeveloper, readDeveloper, createDevelope
         e.preventDefault();
         
         const developer = { name, email, role };
+
         if (currentDeveloper) {
             updateDeveloper(currentDeveloper.id, developer);
-        console.log(developer);
+
+            alert('Developer successfully updated!');
 
         } else {
+       
             createDeveloper(developer);
+            alert('Developer successfully created!');
+
         }
+
         setName('');
         setEmail('');
-        setRole('')
+        setRole('');
+       
     };
 
     return (

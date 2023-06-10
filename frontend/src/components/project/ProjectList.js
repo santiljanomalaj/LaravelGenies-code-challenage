@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { deleteProject, readProjects } from '../redux/actions/projectActions';
+import { deleteProject, readProjects } from '../../redux/actions/projectActions';
 
 const ProjectList = ({ projects, readProjects, deleteProject }) => {
 
@@ -13,6 +13,7 @@ const ProjectList = ({ projects, readProjects, deleteProject }) => {
   const onDeleteClick = id => {
 
     deleteProject(id);
+    alert("Project is deleted succesfully");
 
   };
 

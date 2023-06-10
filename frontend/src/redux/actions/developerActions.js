@@ -47,7 +47,7 @@ export function readDevelopers() {
 
 export function readDeveloper(id) {
   return dispatch => {
-    console.log("readDeveloper", id);
+  
     axios.get(`${BASE_URL}/developers/${id}`)
       .then(response => {
         dispatch({
@@ -73,6 +73,7 @@ export function updateDeveloper(id, updates) {
       .catch(error => console.log(error));
   };
 }
+
 
 
 //@DELETE: Delete Developer
