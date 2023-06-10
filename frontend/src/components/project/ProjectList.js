@@ -13,6 +13,7 @@ const ProjectList = ({ projects, readProjects, deleteProject }) => {
   const onDeleteClick = id => {
 
     deleteProject(id);
+    
     alert("Project is deleted succesfully");
 
   };

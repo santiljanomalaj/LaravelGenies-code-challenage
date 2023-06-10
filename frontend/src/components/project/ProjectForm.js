@@ -21,8 +21,6 @@ const ProjectForm = ({ currentProject, createProject, updateProject, readProject
         
     }, [currentProject]);
     
-    // const history = useHistory();
-
     const handleSubmit = e => {
         e.preventDefault();
         const project = { title, description };
