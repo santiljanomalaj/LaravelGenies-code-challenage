@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\DeveloperController;
-use App\Http\Controllers\ProjectController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProjectsController;
+use App\Http\Controllers\DevelopersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//resource routes
-Route::apiResource('developers', DeveloperController::class);
-Route::apiResource('projects', ProjectController::class);
-//
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//restful api: /api/projects
+Route::resource('projects',ProjectsController::class);
+
+//restful api: /api/developers
+Route::resource('developers',DevelopersController::class);
